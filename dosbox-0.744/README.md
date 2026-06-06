@@ -1,0 +1,38 @@
+## [sdl]位置设置窗口大小
+
+```bash
+[sdl]
+#       fullscreen: Start dosbox directly in fullscreen. (Press ALT-Enter to go back)
+#       fulldouble: Use double buffering in fullscreen. It can reduce screen flickering, but it can also result in a slow DOSBox.
+#   fullresolution: What resolution to use for fullscreen: original or fixed size (e.g. 1024x768).
+#                     Using your monitor's native resolution with aspect=true might give the best results.
+#                     If you end up with small window on a large screen, try an output different from surface.
+# windowresolution: Scale the window to this size IF the output device supports hardware scaling.
+#                     (output=surface does not!)
+#           output: What video system to use for output.
+#                   Possible values: surface, overlay, opengl, openglnb, ddraw.
+#         autolock: Mouse will automatically lock, if you click on the screen. (Press CTRL-F10 to unlock)
+#      sensitivity: Mouse sensitivity.
+#      waitonerror: Wait before closing the console if dosbox has an error.
+#         priority: Priority levels for dosbox. Second entry behind the comma is for when dosbox is not focused/minimized.
+#                     pause is only valid for the second entry.
+#                   Possible values: lowest, lower, normal, higher, highest, pause.
+#       mapperfile: File used to load/save the key/event mappings from. Resetmapper only works with the defaul value.
+#     usescancodes: Avoid usage of symkeys, might not work on all operating systems.
+
+fullscreen=false
+fulldouble=true
+fullresolution=desktop
+windowresolution=1280x960 
+output=opengl 
+```
+
+### 在conf文件最后面添加自动加载masn目录并切换到目录
+
+```bash
+[autoexec]
+# Lines in this section will be run at startup.
+# You can put your MOUNT lines here.
+mount c D:\DOSBox_MASM-master\masm
+c:
+```
